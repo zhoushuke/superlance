@@ -214,7 +214,7 @@ def main(argv=sys.argv):
     programs = []
     any = False
     from_email = 'http://127.0.0.1:6789/api/mail'
-    to_email = 'senserealty_devops@sensetime.com'
+    to_email = 'xxx@xxx.com'
     optionalheader = None
 
     for option, value in opts:
