@@ -202,7 +202,7 @@ def main():
     mailer = MailService("http://127.0.0.1:6789/api/mail")
     body = mailer.gen_html_body("<h1>HelloWorld</h1>")
     html = mailer.gen_html("Process Alert By Supervisor".encode("utf-8"), body)
-    mailer.send("zhoushuke@sensetime.com", "Proceee Fires".encode("utf-8"), "html", html.encode("utf-8"))
+    mailer.send("xxx@xxx.com", "Proceee Fires".encode("utf-8"), "html", html.encode("utf-8"))
 
 
 if __name__ == '__main__':
