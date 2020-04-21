@@ -24,7 +24,7 @@
 # [eventlistener:crashmail]
 # command =
 #     /usr/bin/crashmail
-#         -o hostname -a -e public -m notify-on-crash@domain.com
+#         -o hostname -a -e  -m notify-on-crash@domain.com
 #         -s '/usr/sbin/sendmail -t -i -f crash-notifier@domain.com'
 # events=PROCESS_STATE
 #
