@@ -39,7 +39,7 @@ if py_version < (3, 3):
     tests_require.append('mock')
 
 setup(name='superlance',
-      version='1.1.1',
+      version='1.1.2',
       license='BSD-derived (http://www.repoze.org/LICENSE.txt)',
       description='superlance plugins for supervisord',
       long_description=README + '\n\n' + CHANGES,

@@ -4,8 +4,10 @@
 # @Author  : zhoushuke
 # @mail    : zhoushuke@sensetime.com
 # @Site    :
-# @File    : mail.py
+# @File    : sendxmail.py
 # @Software: PyCharm
+# @Midofy  : 2020/04/20 20:00
+# @Version : v1.1.2
 
 import os
 import logging
@@ -202,7 +204,7 @@ def main():
     mailer = MailService("http://127.0.0.1:6789/api/mail")
     body = mailer.gen_html_body("<h1>HelloWorld</h1>")
     html = mailer.gen_html("Process Alert By Supervisor".encode("utf-8"), body)
-    mailer.send("xxx@xxx.com", "Proceee Fires".encode("utf-8"), "html", html.encode("utf-8"))
+    mailer.send("zhoushuke@xxx.com", "Proceee Fires".encode("utf-8"), "html", html.encode("utf-8"))
 
 
 if __name__ == '__main__':
