@@ -159,7 +159,7 @@ class CrashMail:
             #html struct
             html_struct = collections.OrderedDict()
             html_struct['event_time'] = event_timestamp
-            html_struct['envi'] = self.envi
+            html_struct['environment'] = self.envi
             html_struct['host_ip'] = host_ip
             html_struct['process_name'] = process_name
             html_struct['process_pid'] = process_pid
@@ -200,7 +200,7 @@ class CrashMail:
 
 
 def main(argv=sys.argv):
-    short_args = "hp:a:e:o:f:t:"
+    short_args = "hp:ae:o:f:t:"
     long_args = [
         "help",
         "program=",
@@ -218,9 +218,9 @@ def main(argv=sys.argv):
 
     programs = []
     any = False
-    envi = "Public"
-    from_email = 'http://127.0.0.1:6789/api/mail'
-    to_email = 'xxx@xxx.com'
+    envi = 'PublicCloud'
+    from_email = 'https://senserealty.sensetime.com/xa2xwd3f6Idy/api/mail'
+    to_email = 'senserealty_devops@sensetime.com'
     optionalheader = None
 
     for option, value in opts:
@@ -234,7 +234,7 @@ def main(argv=sys.argv):
         if option in ('-a', '--any'):
             any = True
 
-        if option in ('-e', '--env'):
+        if option in ('-e', '--envi'):
             envi = value
 
         if option in ('-f', '--from_email'):
@@ -247,7 +247,7 @@ def main(argv=sys.argv):
             optionalheader = value
 
     if not 'SUPERVISOR_SERVER_URL' in os.environ:
-        sys.stderr.write('crashmail must be run as a supervisor event '
+        sys.stderr.write('crashmail must be run as a supervisor event'
                          'listener\n')
         sys.stderr.flush()
         return

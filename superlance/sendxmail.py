@@ -36,7 +36,7 @@ class MailService(object):
             data = urllib.urlencode(data).encode("utf-8")
             res = urllib.urlopen(url, data)
         except Exception as e:
-            logging.error("Send mail failed, exception: {}, mail content: {}".format(e, content))
+            logging.error("Send mail failed, exception: {}, POST url: {}, mail content: {}".format(e, url, content))
             os._exit(1)
         else:
             res_content = res.read()
@@ -180,7 +180,7 @@ class MailService(object):
 
         #table data
         tmp = ""
-        tmp += """<tr bgcolor="#f58500" align="center"><th>Key</th><th>Value</th></tr>"""
+        tmp += """<tr bgcolor="#f58500" align="center"><th>Metric</th><th>Value</th></tr>"""
         for k, v in data_dict.items():
             tmp += """<tr bgcolor="#f2f3f2" align="center">"""
             tmp += '<td><font color="blue">{}</font></td>'.format(k)
